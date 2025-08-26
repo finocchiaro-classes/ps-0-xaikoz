@@ -27,4 +27,3 @@ jobs:
         PS-0-TEST_RESULTS: "${{steps.ps-0-test.outputs.result}}"
       with:
         runners: ps-0-test
-
