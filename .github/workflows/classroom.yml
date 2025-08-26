@@ -13,15 +13,17 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-    - name: ps0
-      id: ps0
-      uses: classroom-resources/autograding-python-grader@v1
+    - name: ps 0 test
+      id: ps-0-test
+      uses: classroom-resources/autograding-command-grader@v1
       with:
+        test-name: ps 0 test
+        setup-command: pip install pytest
+        command: python test.py
         timeout: 1
-        setup-command: ''
     - name: Autograding Reporter
       uses: classroom-resources/autograding-grading-reporter@v1
       env:
-        PS0_RESULTS: "${{steps.ps0.outputs.result}}"
+        PS-0-TEST_RESULTS: "${{steps.ps-0-test.outputs.result}}"
       with:
-        runners: ps0
+        runners: ps-0-test
