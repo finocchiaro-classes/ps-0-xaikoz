@@ -1,3 +1,3 @@
 print('Hello Boston College!')
-print(7 + 15)
-print('Goodbye for now, see you next assignment!')
+print(7+15)
+print('Good afternoon, good evening, and good night!')
